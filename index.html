@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<!-- Animate.css for animations -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+
+<!-- WOW.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
+
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <h1>My Shop</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="cart.html">Cart (<span id="cart-count">0</span>)</a>
+            <button id="logout-btn" class="logout-btn" style="display: none;" onclick="logout()">Logout</button>
+        </nav>
+    </header>
+
+    <!-- Home Page (Products) -->
+    <main>
+        <div class="product-container">
+            <div class="product-card  wow animate__bounceInDown" data-wow-delay="0s" >
+                <img src="https://th.bing.com/th/id/OIP.rAMTGHyyjcQYqHvxFXmeqQHaHa?w=181&h=181&c=7&r=0&o=5&dpr=1.1&pid=1.7" alt="Product Image">
+                <h4 class="title!">Sony Headphones</h4>
+                <p class="price">$199 <span class="offer">10% OFF</span></p>
+                <p class="rating">&#9733; &#9733; &#9733; &#9733; &#9734; (4.5)</p>
+                <p><strong>Category:</strong> Electronics</p>
+                <p><strong>Material:</strong> Plastic & Metal</p>
+                <p><strong>Brand:</strong> Sony</p>
+                <button onclick="checkLogin('Sony Headphones', 199)">Add to Cart</button>
+            </div>
+            <div class="product-card wow animate__bounceInDown" data-wow-delay="0s">
+                <img src="https://th.bing.com/th/id/OIP.o7AQ67bm6ljZtXydYu-OTAHaHa?w=200&h=200&c=7&r=0&o=5&dpr=1.1&pid=1.7">
+                <h4 class="title!">Logitech Wireless Mouse</h4>
+                <p class="price">$49 <span class="offer">15% OFF</span></p>
+                <p class="rating">&#9733; &#9733; &#9733; &#9733; &#9733; (5.0)</p>
+                <p><strong>Category:</strong> Accessories</p>
+                <p><strong>Material:</strong> Plastic</p>
+                <p><strong>Brand:</strong> Logitech</p>
+                <button onclick="checkLogin('Logitech Wireless Mouse', 49)">Add to Cart</button>
+            </div>
+            
+            <div class="product-card wow animate__bounceInDown" data-wow-delay="0s"">
+                <img src="https://th.bing.com/th/id/OIP.jQUmo6v5cXAXSw0Av5OLgQHaHa?w=189&h=189&c=7&r=0&o=5&dpr=1.1&pid=1.7" alt="Product Image">
+                <h4 class="title!">Samsung Galaxy Watch</h4>
+                <p class="price">$299 <span class="offer">20% OFF</span></p>
+                <p class="rating">&#9733; &#9733; &#9733; &#9733; &#9734; (4.7)</p>
+                <p><strong>Category:</strong> Wearables</p>
+                <p><strong>Material:</strong> Stainless Steel</p>
+                <p><strong>Brand:</strong> Samsung</p>
+                <button onclick="checkLogin('Samsung Galaxy Watch', 299)">Add to Cart</button>
+            </div>
+            <div class="product-card wow animate__bounceInDown" data-wow-delay="0s"">
+                <img  src="https://th.bing.com/th/id/OIP.cX_TKdpMJd9hGncOAELOZQHaHa?w=169&h=180&c=7&r=0&o=5&dpr=1.1&pid=1.7" alt="Product Image">
+                <h4 class="title!">Apple iPad Air</h4>
+                <p class="price">$599 <span class="offer">5% OFF</span></p>
+                <p class="rating">&#9733; &#9733; &#9733; &#9733; &#9733; (4.8)</p>
+                <p><strong>Category:</strong> Tablets</p>
+                <p><strong>Material:</strong> Aluminum</p>
+                <p><strong>Brand:</strong> Apple</p>
+                <button onclick="checkLogin('Apple iPad Air', 599)">Add to Cart</button>
+            </div>
+            
+            <div class="product-card wow animate__bounceInDown" data-wow-delay="0s"">
+                <img src="https://th.bing.com/th/id/OIP.g-IXaRH2deMRDkasq9BDFQHaHa?w=175&h=180&c=7&r=0&o=5&dpr=1.1&pid=1.7" alt="Product Image">
+                <h4 class="title!">JBL Bluetooth Speaker</h4>
+                <p class="price">$129 <span class="offer">10% OFF</span></p>
+                <p class="rating">&#9733; &#9733; &#9733; &#9733; &#9734; (4.6)</p>
+                <p><strong>Category:</strong> Audio</p>
+                <p><strong>Material:</strong> Rubber & Metal</p>
+                <p><strong>Brand:</strong> JBL</p>
+                <button onclick="checkLogin('JBL Bluetooth Speaker', 129)">Add to Cart</button>
+            </div>
+            
+            <div class="product-card wow animate__bounceInDown" data-wow-delay="0s"">
+                <img src="https://th.bing.com/th/id/OIP.cX_TKdpMJd9hGncOAELOZQHaHa?w=169&h=180&c=7&r=0&o=5&dpr=1.1&pid=1.7" alt="Product Image">
+                <h4 class="title!">Apple iPad Air</h4>
+                <p class="price">$599 <span class="offer">5% OFF</span></p>
+                <p class="rating">&#9733; &#9733; &#9733; &#9733; &#9733; (4.8)</p>
+                <p><strong>Category:</strong> Tablets</p>
+                <p><strong>Material:</strong> Aluminum</p>
+                <p><strong>Brand:</strong> Apple</p>
+                <button onclick="checkLogin('Apple iPad Air', 599)">Add to Cart</button>
+            </div>
+            
+
+            <!-- <div class="product-card">
+                <img src="https://www.adorama.com/alc/wp-content/uploads/2023/01/Featured-Image.jpg" alt="Product Image">
+                <h4 class="title!">Sony Headphones</h4>
+                <p class="price">$199 <span class="offer">10% OFF</span></p>
+                <p class="rating">&#9733; &#9733; &#9733; &#9733; &#9734; (4.5)</p>
+                <p><strong>Category:</strong> Electronics</p>
+                <p><strong>Material:</strong> Plastic & Metal</p>
+                <p><strong>Brand:</strong> Sony</p>
+                <button onclick="checkLogin('Sony Headphones', 199)">Add to Cart</button>
+            </div>
+
+            <div class="product-card">
+                <img src="https://www.adorama.com/alc/wp-content/uploads/2023/01/Featured-Image.jpg" alt="Product Image">
+                <h4 class="title!">Sony Headphones</h4>
+                <p class="price">$199 <span class="offer">10% OFF</span></p>
+                <p class="rating">&#9733; &#9733; &#9733; &#9733; &#9734; (4.5)</p>
+                <p><strong>Category:</strong> Electronics</p>
+                <p><strong>Material:</strong> Plastic & Metal</p>
+                <p><strong>Brand:</strong> Sony</p>
+                <button onclick="checkLogin('Sony Headphones', 199)">Add to Cart</button>
+            </div>
+
+            <div class="product-card">
+                <img src="https://www.adorama.com/alc/wp-content/uploads/2023/01/Featured-Image.jpg" alt="Product Image">
+                <h4 class="title!">Sony Headphones</h4>
+                <p class="price">$199 <span class="offer">10% OFF</span></p>
+                <p class="rating">&#9733; &#9733; &#9733; &#9733; &#9734; (4.5)</p>
+                <p><strong>Category:</strong> Electronics</p>
+                <p><strong>Material:</strong> Plastic & Metal</p>
+                <p><strong>Brand:</strong> Sony</p>
+                <button onclick="checkLogin('Sony Headphones', 199)">Add to Cart</button>
+            </div>
+             -->
+        </div>
+    </main>
+    
+
+   
+    <script src="script.js"></script>
+   
+</body>
+</html>
