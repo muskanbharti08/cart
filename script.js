@@ -93,5 +93,3 @@ function clearCart() {
     displayCart(); // Cart ko update karein
 }
 
-// Initialize WOW.js
-new WOW().init();
